@@ -145,6 +145,16 @@ x_train, x_test, y_train, y_test = train_test_split(x, y_encoded, test_size=0.2,
 
 # XGBoost Classifier with Hyperparameter Tuning
 
+'''
+param_grid = {
+    'n_estimators': [50, 100, 200],
+    'max_depth': [3, 5, 7],
+    'learning_rate': [0.01, 0.1, 0.2],
+}
+'''
+
+
+
 xgb_classifier = xgb.XGBClassifier(objective='multi:softmax',  num_class=4,learning_rate= 0.2, max_depth = 3, n_estimators = 200)
 
 xgb_classifier.fit(x_train, y_train)
